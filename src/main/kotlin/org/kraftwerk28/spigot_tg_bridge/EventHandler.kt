@@ -4,7 +4,6 @@ import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
 import org.bukkit.event.entity.PlayerDeathEvent
 import org.bukkit.event.player.AsyncPlayerChatEvent
-import org.bukkit.event.player.PlayerBedEnterEvent
 import org.bukkit.event.player.PlayerJoinEvent
 import org.bukkit.event.player.PlayerQuitEvent
 
@@ -46,15 +45,6 @@ class EventHandler(
             val text = it.replace(username, "<i>$username</i>")
             sendMessage(text)
         }
-    }
-
-    @EventHandler
-    fun onPlayerAsleep(event: PlayerBedEnterEvent) {
-        if (!config.logPlayerAsleep) return
-        if (event.bedEnterResult != PlayerBedEnterEvent.BedEnterResult.OK)
-            return
-        val text = "<i>${event.player.displayName}</i> fell asleep."
-        sendMessage(text)
     }
 
     private fun sendMessage(text: String, username: String? = null) = plugin.launch {
