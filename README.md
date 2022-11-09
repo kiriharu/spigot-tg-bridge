@@ -2,6 +2,11 @@
 
 ### This plugin will send chat messages from Minecraft to Telegram, and from Telegram to Minecraft.
 
+## Difference from original project
+
+1. Fully compatible with 1.12 Spigot
+2. Removed asleep handler (not supported by spigot 1.12)
+
 ## How to use:
 
 1. Download .jar file from [releases page](https://github.com/kraftwerk28/spigot-tg-bridge/releases), and put it in `plugins/` directory on your server **OR** clone this repo and run `gradle` inside repo's directory.
@@ -49,7 +54,6 @@
 |     logFromMCtoTG      | If true, plugin will send messages from players on server, to Telegram chats                     |       `boolean`        | :x: |          `true`          |
 |     logFromTGtoMC      | If true, plugin will send messages from chats, to Minecraft server                               |       `boolean`        | :x: |          `true`          |
 |     logPlayerDeath     | If true, plugin will send message to Telegram if player died                                     |       `boolean`        | :x: |         `false`          |
-|    logPlayerAsleep     | If true, plugin will send message to Telegram if player fell asleep                              |       `boolean`        | :x: |         `false`          |
 |        strings         | Dictionary of tokens - strings for plugin i18n                                                   | `Map<string, string>`  | :x: |    See default config    |
 |        commands        | Dictionary of command text used in Telegram bot                                                  | `Map<string, string>`  | :heavy_check_mark: |        See below         |
 | telegramMessageFormat  | Format string for TGtoMC chat message                                                            |        `string`        | :x: |    See default config    |
